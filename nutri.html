@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutritional Value Finder</title>
+  <link rel="stylesheet" href="nutri.css">
+</head>
+
+<body>
+  <div class="container">
+    <img src="assets/21.jpg">
+    <h1 class="bf">BumpFeed <br> By PregCare</h1>
+    <h1>Nutritional Value Finder</h1>
+    <input type="text" id="foodNameInput" placeholder="Enter Food Item Name">
+    <button onclick="searchNutrition()">Search</button>
+   
+    <div class="result-container">
+      <div id="nutritionResult"></div>
+      <div id="pregnancySafetyResult"></div>
+    </div>
+  </div>
+  <script>
+    const foodDatabase = {
+      "apple": {
+        "calories": 52,
+        "fat": 0.2,
+        "carbs": 13.8,
+        "protein": 0.3,
+        "pregnant_safe": true
+      },
+      "banana": {
+        "calories": 89,
+        "fat": 0.3,
+        "carbs": 22.8,
+        "protein": 1.1,
+        "pregnant_safe": true
+      },
+      "orange": {
+        "calories": 62,
+        "fat": 0.2,
+        "carbs": 15.4,
+        "protein": 1.2,
+        "pregnant_safe": true
+      },
+      // Add more common fruits and vegetables here...
+      "biryani": {
+        "calories": 300,
+        "fat": 12,
+        "carbs": 35,
+        "protein": 15,
+        "pregnant_safe": true
+      },
+      "paneer tikka": {
+        "calories": 180,
+        "fat": 12,
+        "carbs": 10,
+        "protein": 8,
+        "pregnant_safe": true
+      },
+      // Add more Indian dishes here...
+      "pav bhaji": {
+        "calories": 300,
+        "fat": 15,
+        "carbs": 35,
+        "protein": 7,
+        "pregnant_safe": true
+      },
+      "chole bhature": {
+        "calories": 450,
+        "fat": 20,
+        "carbs": 40,
+        "protein": 12,
+        "pregnant_safe": false
+      },
+      "vada pav": {
+        "calories": 300,
+        "fat": 18,
+        "carbs": 30,
+        "protein": 6,
+        "pregnant_safe": false
+      },
+      // Add more Indian dishes here...
+      "kheer": {
+        "calories": 200,
+        "fat": 10,
+        "carbs": 25,
+        "protein": 4,
+        "pregnant_safe": true
+      },
+      "pulao": {
+        "calories": 250,
+        "fat": 8,
+        "carbs": 40,
+        "protein": 6,
+        "pregnant_safe": true
+      },
+      // Add more Indian dishes here...
+      "papri chaat": {
+        "calories": 200,
+        "fat": 10,
+        "carbs": 25,
+        "protein": 4,
+        "pregnant_safe": true
+      },
+      "bhel puri": {
+        "calories": 250,
+        "fat": 8,
+        "carbs": 40,
+        "protein": 6,
+        "pregnant_safe": true
+      },
+      // Add more Indian dishes here...
+      // Add 50 more Indian dishes, half safe and half unsafe for pregnant women
+    };
+
+    // Function to display nutritional information of a food item
+    function displayNutrition(foodName) {
+      const nutritionResult = document.getElementById('nutritionResult');
+
+      if (foodName in foodDatabase) {
+        const nutritionData = foodDatabase[foodName];
+        nutritionResult.innerHTML = `
+      <h2>Nutritional Information</h2>
+      <p>Calories: ${nutritionData.calories}</p>
+      <p>Fat: ${nutritionData.fat}g</p>
+      <p>Carbohydrates: ${nutritionData.carbs}g</p>
+      <p>Protein: ${nutritionData.protein}g</p>
+    `;
+      } else {
+        nutritionResult.innerHTML = "<p>Food item not found!</p>";
+      }
+    }
+
+    // Function to check whether a food item is safe for pregnant women
+    function checkPregnantSafety() {
+      const foodName = document.getElementById('foodNameInput').value.toLowerCase();
+      const pregnancySafetyResult = document.getElementById('pregnancySafetyResult');
+
+      if (foodName in foodDatabase) {
+        const isSafe = foodDatabase[foodName].pregnant_safe;
+        if (isSafe) {
+          pregnancySafetyResult.innerHTML = "<p>SAFE for you.</p>";
+        } else {
+          pregnancySafetyResult.innerHTML = "<p>UNSAFE!</p>";
+        }
+      } else {
+        pregnancySafetyResult.innerHTML = "<p>Food item not found!</p>";
+      }
+    }
+
+    // Function to search for nutritional value of a food item
+    function searchNutrition() {
+      const foodName = document.getElementById('foodNameInput').value.toLowerCase();
+      displayNutrition(foodName);
+      checkPregnantSafety();
+    }
+  </script>
+</body>
+
+</html>

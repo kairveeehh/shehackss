@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 50px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: pink;
+  font-size: 3rem;
+  
+}
+.bf{
+  color: black;
+  font-size: 4rem;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: pink;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+
+#nutritionResult,
+#pregnancySafetyResult {
+  width: 45%;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+#nutriScoreResult{
+  border: #333;
+}
+#pregnancySafetyResult {
+  font-weight: 900;
+  font-size: 1rem;
+  padding-top: 20px;
+  color: green;
+}
