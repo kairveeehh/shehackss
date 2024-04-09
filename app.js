@@ -2,7 +2,7 @@ auth0.createAuth0Client({
   domain: "dev-8zeut4omwj8nk6m3.us.auth0.com",
   clientId: "WjmWSXfL3pMua8lMCIOALGCsmTJgvjUz",
   authorizationParams: {
-    redirect_uri: "http://127.0.0.1:5500/BFF/index.html"
+    redirect_uri: "http://127.0.0.1:5500/index.html"
   }
 }).then(async (auth0Client) => {
   // Assumes a button with id "login" in the DOM
@@ -20,7 +20,7 @@ auth0.createAuth0Client({
     window.history.replaceState({}, document.title, "/");
   }
 
-  // Assumes a button with id "logout" in the DOM
+  
   const logoutButton = document.getElementById("logout");
 
   logoutButton.addEventListener("click", (e) => {
