@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  color: pink;
+  color: #d20976;
   font-size: 3rem;
   
 }
@@ -35,7 +35,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color:#ff7598;
 }
 
 .result-container {

@@ -19,6 +19,7 @@ body {
 
 h1{
   color: black;
+  font-weight: 500;
 }
 
 #main{
@@ -41,6 +42,17 @@ nav {
 }
 .yoga{
   text-align: right;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 300px;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+.yoa{
+  height: 300px;
+  aspect-ratio: 1;
+  width: 200px;
 }
 .second{
   color: black;
@@ -49,6 +61,15 @@ nav {
   margin-bottom: 100px;
   display: flex;
   flex-direction: column 2fr 1fr;
+  column-gap: 400px;
+}
+.ssecond{
+  color: black;
+  margin-top: 250px;
+  font-size: 30px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column 1fr 2fr;
   column-gap: 400px;
 }
 .ML{
@@ -62,8 +83,17 @@ nav {
  cursor: pointer;
  vertical-align: middle;
  margin-top: 20px;
+ padding-top: 0px;
+ padding-bottom: 3px;
+ padding-left: 20px;
+ padding-right: 20px;
  
+ margin-left: 60px;
 
+}
+
+.ML:hover{
+  scale: 1.06;
 }
 
 .logo img{
@@ -245,6 +275,12 @@ p{
   padding-left: 0px;
 }
 .second{
+  letter-spacing: 1px;
+  line-height: 50px;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.ssecond{
   letter-spacing: 1px;
   line-height: 50px;
   font-weight: 500;

@@ -23,6 +23,7 @@ header {
   align-content: center;
   text-align: center;
   
+  
 }
 
 h1, h2 {
@@ -63,8 +64,10 @@ footer {
 }
 img{
   border-color: #666;
-  height: 450px;
+  aspect-ratio: 1;
   border: 5px solid black;
+  border-radius: 40px;
+  width: 350px;
 }
 
 
