@@ -11,6 +11,7 @@ auth0.createAuth0Client({
   loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     auth0Client.loginWithRedirect();
+    document.getElementById("login").innerHTML ="Logout";
   });
 
   if (location.search.includes("state=") && 
@@ -35,6 +36,7 @@ auth0.createAuth0Client({
   const profileElement = document.getElementById("profile");
 
   if (isAuthenticated) {
+    document.getElementById("login").innerHTML ="Logout";
     profileElement.style.display = "block";
     profileElement.innerHTML = `
             <p>${userProfile.name}</p>
